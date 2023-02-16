@@ -21,16 +21,16 @@ export default function App() {
   .catch((e)=>{console.log(e)})
  }, [])
 
- function handleClick(){
+ function handleClick(): void {
   input === undefined ? setList(data) : setList(data.filter((i) => {return i.body.includes(input)}))
  }
 
- function handleKeyDown(e : React.KeyboardEvent<HTMLInputElement>){
+ function handleKeyDown(e : React.KeyboardEvent<HTMLInputElement>): void{
   if(e.key === "Enter")
    handleClick()
  }
 
- function handleChange(e : React.ChangeEvent<HTMLInputElement>){
+ function handleChange(e : React.ChangeEvent<HTMLInputElement>): void{
   setInput(e.target.value)
  }
 
